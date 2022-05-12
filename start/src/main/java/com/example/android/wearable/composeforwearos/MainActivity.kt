@@ -99,7 +99,25 @@ fun WearApp() {
             item { ToggleChipExample(contentModifier) }
         }
 
-        // TODO (End): Create a Scaffold (Wear Version)
+        Scaffold(
+            timeText = {
+                if (!listState.isScrollInProgress) {
+                    TimeText()
+                }
+            },
+            vignette = {
+                Vignette(
+                    vignettePosition = VignettePosition.TopAndBottom
+                )
+            },
+            positionIndicator = {
+                PositionIndicator(
+                    scalingLazyListState = listState
+                )
+            }
+        ) {
+
+        }
 
     }
 }
