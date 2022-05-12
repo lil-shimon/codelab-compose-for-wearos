@@ -110,19 +110,50 @@ fun CardExample(
     }
 }
 
-// TODO: Create a Chip Composable
 @Composable
 fun ChipExample(
     modifier: Modifier = Modifier,
     iconModifier: Modifier = Modifier
 ) {
-
+    Chip(
+        modifier = Modifier,
+        onClick = {},
+        label = {
+            Text(
+                text = "5 minute Meditation",
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+        },
+        icon = {
+            Icon(
+                imageVector = Icons.Rounded.SelfImprovement,
+                contentDescription = "triggers meditation action",
+                modifier = iconModifier
+            )
+        }
+    )
 }
 
-// TODO: Create a ToggleChip Composable
 @Composable
 fun ToggleChipExample(modifier: Modifier = Modifier) {
-
+    var checked by remember { mutableStateOf(true) }
+    ToggleChip(
+        modifier = modifier,
+        checked = checked,
+        label = {
+            Text(text = "Sound", maxLines = 1, overflow = TextOverflow.Ellipsis)
+        },
+        toggleControl = {
+            Icon(
+                imageVector = ToggleChipDefaults.switchIcon(checked = checked),
+                contentDescription = if (checked) "On" else "Off"
+            )
+        },
+        onCheckedChange = {
+            checked = it
+        }
+    )
 }
 
 // Function only used as a demo for when you start the code lab (removed as step 1).
