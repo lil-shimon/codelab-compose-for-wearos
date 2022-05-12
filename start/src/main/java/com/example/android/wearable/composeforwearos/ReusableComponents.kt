@@ -34,6 +34,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -90,7 +91,23 @@ fun CardExample(
     modifier: Modifier = Modifier,
     iconModifier: Modifier = Modifier
 ) {
-
+    AppCard(
+        onClick = { },
+        appName = { Text("Message") },
+        time = { Text("12m") },
+        title = { Text("Kim Green") },
+        appImage = {
+            Icon(
+                imageVector = Icons.Rounded.Message,
+                contentDescription = "triggers open message action",
+                modifier = iconModifier
+            )
+        }
+    ) {
+        Column(modifier = Modifier.fillMaxWidth()) {
+            Text("On my way")
+        }
+    }
 }
 
 // TODO: Create a Chip Composable
