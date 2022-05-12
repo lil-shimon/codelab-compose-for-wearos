@@ -52,13 +52,26 @@ import com.example.android.wearable.composeforwearos.theme.WearAppTheme
 
 /* Contains individual Wear OS demo composables for the code lab. */
 
-// TODO: Create a Button Composable (with a Row to center)
 @Composable
 fun ButtonExample(
     modifier: Modifier = Modifier,
     iconModifier: Modifier = Modifier
 ) {
-
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.Center,
+    ) {
+        Button(
+            onClick = { },
+            modifier = Modifier.size(ButtonDefaults.LargeButtonSize)
+        ) {
+            Icon(
+                imageVector = Icons.Rounded.Phone,
+                contentDescription = "triggers phone action",
+                modifier = iconModifier
+            )
+        }
+    }
 }
 
 // TODO: Create a Text Composable
@@ -136,8 +149,12 @@ fun StartOnlyTextComposablesPreview() {
 fun ButtonExamplePreview() {
     WearAppTheme {
         ButtonExample(
-            modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
-            iconModifier = Modifier.size(24.dp).wrapContentSize(align = Alignment.Center)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp),
+            iconModifier = Modifier
+                .size(24.dp)
+                .wrapContentSize(align = Alignment.Center)
         )
     }
 }
@@ -156,7 +173,9 @@ fun ButtonExamplePreview() {
 fun TextExamplePreview() {
     WearAppTheme {
         TextExample(
-            modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp)
         )
     }
 }
@@ -175,8 +194,12 @@ fun TextExamplePreview() {
 fun CardExamplePreview() {
     WearAppTheme {
         CardExample(
-            modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
-            iconModifier = Modifier.size(24.dp).wrapContentSize(align = Alignment.Center)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp),
+            iconModifier = Modifier
+                .size(24.dp)
+                .wrapContentSize(align = Alignment.Center)
         )
     }
 }
@@ -196,8 +219,12 @@ fun CardExamplePreview() {
 fun ChipExamplePreview() {
     WearAppTheme {
         ChipExample(
-            modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
-            iconModifier = Modifier.size(24.dp).wrapContentSize(align = Alignment.Center)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp),
+            iconModifier = Modifier
+                .size(24.dp)
+                .wrapContentSize(align = Alignment.Center)
         )
     }
 }
@@ -216,7 +243,9 @@ fun ChipExamplePreview() {
 fun ToggleChipExamplePreview() {
     WearAppTheme {
         ToggleChipExample(
-            modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp)
         )
     }
 }
